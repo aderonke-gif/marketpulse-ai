@@ -1,6 +1,6 @@
 import unittest
 
-from app import analyze
+from app import analyze, has_required_text
 
 
 class AnalyzeTest(unittest.TestCase):
@@ -31,7 +31,12 @@ class AnalyzeTest(unittest.TestCase):
         })
         self.assertEqual(result["sentiment"], "neutral")
 
+    def test_required_text_rejects_whitespace(self):
+        self.assertFalse(has_required_text({"headline": "  ", "body": "content"}))
+        self.assertFalse(has_required_text({"headline": "headline", "body": "\t"}))
+        self.assertTrue(has_required_text({"headline": " headline ", "body": " body "}))
+
+
 
 if __name__ == "__main__":
     unittest.main()
-

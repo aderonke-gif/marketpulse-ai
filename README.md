@@ -135,8 +135,8 @@ docker compose build gateway # Go tests and compilation in Docker
 
 Verified during initial development:
 
-- three Python inference tests passed;
-- all Go packages compiled and the TTL cache test passed;
+- four Python inference and validation tests passed;
+- all Go packages compiled and seven cache, API, and client tests passed;
 - both containers became healthy;
 - the end-to-end request returned the documented signal;
 - repeated inference changed from `MISS` to `HIT`;

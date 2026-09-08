@@ -44,4 +44,3 @@ func (c *Cache) Set(key string, value model.Analysis) {
 	c.items[key] = item{value: value, expiresAt: time.Now().Add(c.ttl)}
 	c.mu.Unlock()
 }
-

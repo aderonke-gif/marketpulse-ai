@@ -44,4 +44,3 @@ func (c *MLClient) Analyze(ctx context.Context, article model.Article) (model.An
 	}
 	return result, nil
 }
-

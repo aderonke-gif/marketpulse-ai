@@ -32,6 +32,15 @@ EVENT_PATTERNS = {
     "analyst_rating": r"\b(upgrade|downgrade|price target|outperform)\b",
 }
 WORD_RE = re.compile(r"[a-z0-9$%]+")
+REQUEST_TIMEOUT_SECONDS = 5
+
+
+def has_required_text(article: dict[str, Any]) -> bool:
+    """Apply the same whitespace-aware contract enforced by the Go gateway."""
+    return bool(
+        str(article.get("headline", "")).strip()
+        and str(article.get("body", "")).strip()
+    )
 
 
 def analyze(article: dict[str, Any]) -> dict[str, Any]:
@@ -69,6 +78,12 @@ def analyze(article: dict[str, Any]) -> dict[str, Any]:
 class Handler(BaseHTTPRequestHandler):
     server_version = "MarketPulseML/1.0"
 
+    def setup(self) -> None:
+        super().setup()
+        # Bound slow/trickled request bodies even when this internal service is
+        # called directly rather than through the deadline-enforcing gateway.
+        self.connection.settimeout(REQUEST_TIMEOUT_SECONDS)
+
     def do_GET(self) -> None:
         if self.path == "/health":
             self.respond(200, {"status": "ok", "service": "ml-inference"})
@@ -85,13 +100,15 @@ class Handler(BaseHTTPRequestHandler):
                 raise ValueError("body must be between 1 byte and 1 MB")
             request = json.loads(self.rfile.read(length))
             article = request.get("article", {})
-            if not article.get("headline") or not article.get("body"):
+            if not has_required_text(article):
                 self.respond(422, {"error": "headline and body are required"})
                 return
             started = time.perf_counter()
             result = analyze(article)
             result["inference_ms"] = round((time.perf_counter() - started) * 1000, 3)
             self.respond(200, result)
+        except TimeoutError:
+            self.respond(408, {"error": "request body timeout"})
         except (ValueError, json.JSONDecodeError) as exc:
             self.respond(400, {"error": f"invalid request: {exc}"})
 

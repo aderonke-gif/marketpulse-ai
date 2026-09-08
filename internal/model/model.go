@@ -24,4 +24,3 @@ type Analysis struct {
 type AnalyzeRequest struct {
 	Article Article `json:"article"`
 }
-

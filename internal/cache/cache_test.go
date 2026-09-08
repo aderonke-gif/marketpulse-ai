@@ -19,4 +19,3 @@ func TestCacheHitAndExpiry(t *testing.T) {
 		t.Fatal("expected expired item to be removed")
 	}
 }
-

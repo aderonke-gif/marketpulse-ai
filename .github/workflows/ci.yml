@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - run: test -z "$(gofmt -l .)"
       - run: go test ./...
       - run: cd services/ml && python -m unittest -v
       - run: docker compose config --quiet
-
