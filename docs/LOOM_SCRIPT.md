@@ -14,7 +14,7 @@ Show: `internal/api/handler.go` lines around `analyze`, then `services/ml/app.py
 
 ## 1:25–2:00 — Live demo
 
-Run `make demo`. Point out the structured response and `X-Cache: MISS`. Run it again and point out `X-Cache: HIT`. Optionally open `http://localhost:8080/metrics`.
+Run `make demo`. Point out the structured response and `X-Cache: MISS`. Run it again and point out `X-Cache: HIT`. Optionally open `http://localhost:18080/metrics`. The host uses port 18080 to avoid the local Jenkins service on port 8080; the Go container still listens on 8080.
 
 “The cache key is a SHA-256 digest of ticker and content, so syndicated duplicates do not repeatedly consume inference capacity. The second identical request bypasses Python.”
 
@@ -41,4 +41,3 @@ Show: `internal/cache/cache.go`, briefly `cmd/gateway/main.go`.
 - Keep the README, handler, Python model, cache, and terminal in five prepared tabs.
 - Record at 1080p; keep the camera bubble away from the lower-right terminal output.
 - Never claim production traffic or experience you cannot substantiate. Describe this as a production-minded prototype unless it has actually served users.
-

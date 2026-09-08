@@ -56,7 +56,7 @@ The services can be tested, deployed, and scaled independently. The tradeoff is 
 
 ## Request lifecycle
 
-1. A client sends an article to `POST /v1/analyze` on port `8080`.
+1. A client sends an article to `POST /v1/analyze`. Docker publishes the Go container's port `8080` as host port `18080` by default.
 2. Go rejects malformed, oversized, or incomplete input.
 3. It hashes the content and checks the concurrency-safe TTL cache.
 4. A cache miss invokes Python on port `8000` with a three-second deadline.
@@ -98,7 +98,7 @@ cd marketpulse-ai
 docker compose up --build -d
 make demo
 make demo
-curl http://localhost:8080/metrics
+curl http://localhost:18080/metrics
 ```
 
 Expected behavior:
@@ -124,6 +124,13 @@ Example response:
 ```
 
 Stop with `docker compose down`.
+
+The nonstandard host port avoids common collisions with Jenkins and other development servers. Override it when needed while keeping the container contract unchanged:
+
+```bash
+GATEWAY_PORT=19090 docker compose up --build -d
+make demo GATEWAY_URL=http://localhost:19090
+```
 
 ## Testing and verification
 
