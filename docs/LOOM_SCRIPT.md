@@ -2,7 +2,7 @@
 
 ## 0:00–0:30 — Product
 
-“Hi Tommy, I’m Olamitunde. This is MarketPulse AI, a service that turns unstructured financial news into structured signals: summary, sentiment, confidence, ticker, and events such as earnings or guidance changes. I chose this because it mirrors the core engineering problem at Benzinga: extracting useful insight from time-sensitive financial text and delivering it at low latency.”
+“Hi Tommy, I’m Aderonke Joy Ogundipe. This is MarketPulse AI, a service that turns unstructured financial news into structured signals: summary, sentiment, confidence, ticker, and events such as earnings or guidance changes. I chose this because it mirrors the core engineering problem at Benzinga: extracting useful insight from time-sensitive financial text and delivering it at low latency.”
 
 Show: `README.md`, then the architecture diagram.
 

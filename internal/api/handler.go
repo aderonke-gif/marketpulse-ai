@@ -11,9 +11,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/olamitunde/marketpulse-ai/internal/cache"
-	"github.com/olamitunde/marketpulse-ai/internal/client"
-	"github.com/olamitunde/marketpulse-ai/internal/model"
+	"github.com/aderonke-gif/marketpulse-ai/internal/cache"
+	"github.com/aderonke-gif/marketpulse-ai/internal/client"
+	"github.com/aderonke-gif/marketpulse-ai/internal/model"
 )
 
 type Handler struct {

@@ -36,7 +36,7 @@ Show the README title and architecture.
 
 Say:
 
-> Hi Tommy, I’m [YOUR NAME]. This is MarketPulse AI, a production-minded financial-news intelligence prototype. It accepts an unstructured market article and returns a structured signal containing the ticker, sentiment, confidence, detected events, a summary, and model version. I chose this problem because it closely reflects Benzinga’s work: turning time-sensitive financial text into reliable data that downstream products and APIs can consume.
+> Hi Tommy, I’m Aderonke Joy Ogundipe. This is MarketPulse AI, a production-minded financial-news intelligence prototype. It accepts an unstructured market article and returns a structured signal containing the ticker, sentiment, confidence, detected events, a summary, and model version. I chose this problem because it closely reflects Benzinga’s work: turning time-sensitive financial text into reliable data that downstream products and APIs can consume.
 
 Key idea to understand: the product is not merely a sentiment demo. Its value is the complete path from text inference to a defensive, observable API.
 

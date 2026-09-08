@@ -1,4 +1,3 @@
-module github.com/olamitunde/marketpulse-ai
+module github.com/aderonke-gif/marketpulse-ai
 
 go 1.23
-

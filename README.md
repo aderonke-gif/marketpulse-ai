@@ -181,4 +181,4 @@ When reviewing or extending this repository:
 
 ## Ownership and attribution
 
-The repository is hosted under the authorized `aderonke-gif` GitHub account. Commits for this hiring exercise are authored as **Olamitunde Temitope**. Repository ownership and commit authorship are intentionally distinct and should not be misrepresented.
+This project and its commits are attributed to **Aderonke Joy Ogundipe**, using the authorized GitHub account [`aderonke-gif`](https://github.com/aderonke-gif).

@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/olamitunde/marketpulse-ai/internal/model"
+	"github.com/aderonke-gif/marketpulse-ai/internal/model"
 )
 
 func TestCacheHitAndExpiry(t *testing.T) {

@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/olamitunde/marketpulse-ai/internal/cache"
-	"github.com/olamitunde/marketpulse-ai/internal/client"
+	"github.com/aderonke-gif/marketpulse-ai/internal/cache"
+	"github.com/aderonke-gif/marketpulse-ai/internal/client"
 )
 
 func newTestAPI(t *testing.T, upstream http.Handler) (http.Handler, *atomic.Int32) {
