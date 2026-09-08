@@ -15,7 +15,7 @@ Benzinga requested a **2–5 minute screen-sharing Loom video** that covers:
 
 The target role combines financial NLP, LLM/RAG systems, production model serving, Python and Go microservices, real-time pipelines, AWS, Kubernetes, observability, and end-to-end ownership. This project was scoped to demonstrate those themes in a system that can be explained and run live within the short video.
 
-The prepared narration is in [`docs/LOOM_SCRIPT.md`](docs/LOOM_SCRIPT.md), and final checks are in [`docs/SUBMISSION_CHECKLIST.md`](docs/SUBMISSION_CHECKLIST.md).
+The concise narration is in [`docs/LOOM_SCRIPT.md`](docs/LOOM_SCRIPT.md), the detailed presentation and interview-preparation document is in [`docs/5_MINUTE_DEFENSE_GUIDE.md`](docs/5_MINUTE_DEFENSE_GUIDE.md), and final checks are in [`docs/SUBMISSION_CHECKLIST.md`](docs/SUBMISSION_CHECKLIST.md).
 
 ## Product overview
 
